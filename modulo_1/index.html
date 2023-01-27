@@ -1,0 +1,35 @@
+<html>
+    <script>
+
+        reducer = (soma, atual) => soma + atual
+
+        function somaMultiplos3ou5(numero) { 
+
+            var i = 1
+            var multiplos_3 = []
+            var multiplos_5 = []
+            while (i<numero) {
+                
+                multiplo_3 = 3*i
+                multiplo_5 = 5*i
+
+                multiplos_3.push(multiplo_3)
+                multiplos_5.push(multiplo_5)
+                
+                i++
+            }
+
+            multiplos_3 = multiplos_3.filter(item => item < numero)
+            multiplos_5 = multiplos_5.filter(item => item < numero)
+
+            multiplos_3.push.apply(multiplos_3, multiplos_5)
+
+            return multiplos_3.filter((v, i, a) => a.indexOf(v) === i).reduce(reducer)
+
+        }
+
+    </script>
+
+    somaMultiplos3ou5()
+    
+</html>
