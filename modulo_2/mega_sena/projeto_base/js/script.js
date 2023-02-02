@@ -5,6 +5,7 @@ var state = {
 }
 
 function start() {
+    readLocalStorage();
     createBoard();
     newGame();
 }
@@ -192,6 +193,7 @@ function saveGame() {
     }
     
     state.savedGames.push(state.currentGame);
+    writeToLocalStorage();
     newGame();
 }
 
@@ -201,6 +203,21 @@ function isGameComplete() {
 
 function resetGame() {
     state.currentGame = []
+}
+
+function readLocalStorage() {
+    if (!window.localStorage) {
+        return;
+    }
+
+    var savedGamesFromLocalStorage = window.localStorage.getItem('saved-games');
+    if (savedGamesFromLocalStorage) {
+        state.savedGames = JSON.parse(savedGamesFromLocalStorage);
+    }
+}
+
+function writeToLocalStorage() {
+    window.localStorage.setItem('saved-games', JSON.stringify(state.savedGames));
 }
 
 start()
