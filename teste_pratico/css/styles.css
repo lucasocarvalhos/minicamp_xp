@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(53, 27, 27);
+}
+
+header {
+    color: rgb(174, 243, 35);
+    text-align: center;
+}
+
+section {
+    color: rgb(174, 243, 35);
+    margin: 12px;
+    text-align: center;
+}
+
+button {
+    background-color: greenyellow;
+    color: black;
+    border-radius: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.up-page {
+    background-color:black;
+}
+
+.result p {
+    color: rgb(243, 243, 243);
+    font-size: large;
+}
+
+.result span {
+    color:  rgb(212, 207, 207);
+    font-size: medium;
+}
+
+.operations {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.result {
+    width: 30%;
+    height: 100px;
+    text-align: center;
+    border: 1px solid black;
+}
